@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="https://kit.fontawesome.com/2b2f9d866c.js" crossorigin="anonymous">
+        let navbarIconEl = document.getElementById("nav-items-icon");
+let navbarItemsContainer = document.getElementById("navbarItems");
+let iconChanged = false;
+navbarIconEl.addEventListener("click", function() {
+    if (iconChanged === false) {
+        navbarIconEl.classList.remove("fas", "fa-bars", "icon");
+        navbarIconEl.classList.add("fas", "fa-times", "icon");
+        navbarItemsContainer.classList.add("showing-items");
+        navbarItemsContainer.classList.remove("navbar-items");
+        iconChanged = true;
+    } else {
+        navbarIconEl.classList.remove("fas", "fa-times", "icon");
+        navbarIconEl.classList.add("fas", "fa-bars", "icon");
+        navbarItemsContainer.classList.remove("showing-items");
+        navbarItemsContainer.classList.add("navbar-items");
+        iconChanged = false;
+    }
+})
+    </script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Comfortaa&family=Mooli&family=Poppins&family=Reggae+One&display=swap&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+/*@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Mooli&family=Poppins&family=Reggae+One&display=swap');*/
+* {
+    font-family: "Comfortaa";
+    background-color: black;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.github-url {
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 767px) {
+
+    .nav-bar-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2px;
+        padding-top: 15px;
+        align-items: center;
+    }
+
+    .nav-logo {
+        height: 50px;
+        width: 50px;
+        border: 1px solid white;
+        padding-bottom: 3px;
+        margin-left: 45px;
+    }
+
+    .logo {
+        font-size: 18px;
+        padding-left: 14px;
+        padding-bottom: 10px;
+    }
+
+    .nav-icon-container {
+        margin-right: 25px;
+    }
+
+    .hamberger-icon {
+        font-size: 30px;
+        color: white
+    }
+
+    .navbar-items {
+        display: none;
+    }
+
+    .showing-items {
+        display: flex;
+        flex-direction: column;
+        margin-top: 25px;
+        margin-left: 28px;
+        margin-right: 25px;
+        font-family: "Roboto";
+    }
+
+    .nav-items {
+        padding-right: 10px;
+        display: none;
+    }
+
+    .nav-item {
+        color: white;
+        padding-right: 15px;
+        text-decoration: none;
+        font-family: "Roboto";
+        padding: 15px;
+        border-top: 1px solid #e7e5ea;
+    }
+
+    .nav-bar-left {
+        padding: 12px;
+        font-size: 18px;
+        margin-right: 15px;
+        text-decoration: none;
+    }
+
+    .home-section {
+        padding-top: 65px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        flex-wrap: wrap;
+    }
+
+    .my-logo {
+        height: 250px;
+        border-radius: 250px;
+        margin-bottom: 35px;
+    }
+
+    .my-description {
+        width: 75vw;
+        margin-bottom: 20px;
+    }
+
+    .description-tag {
+        font-size: 22px;
+        font-family: "Comfortaa";
+        font-weight: 200;
+    }
+
+    .description-name {
+        font-size: 30px;
+        font-family: "Comfortaa";
+    }
+
+    .description-btn-1 {
+        background-color: white;
+        font-size: 15px;
+        padding: 10px;
+        color: black;
+        border-radius: 20px;
+        margin-right: 12px;
+    }
+
+    .description-btn-2 {
+        background-color: transparent;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 20px;
+        border: solid 1px white
+    }
+
+    .skill-section-container {
+        height: 80vh;
+    }
+
+    .skills-section {
+        padding-left: 20px;
+    }
+
+    .skills-main-heading {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .skill-img {
+        height: 120px;
+        margin-top: 30px;
+    }
+
+    .skills-card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .skill-card {
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 10px;
+        width: 40vw;
+        margin-bottom: 35px;
+        padding: 25px;
+    }
+
+    .projects-section-container {
+        height: 100vh;
+        padding-top: 65px;
+    }
+
+    .project-card {
+        border: solid 1px white;
+        border-radius: 5px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+        margin-bottom: 20px;
+    }
+
+    .project-card-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .project-img {
+        padding-top: 25px;
+        height: 100px;
+        border-radius: 5px;
+    }
+
+    .project-main-heading {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .project-card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .services-section-container {
+        height: 100vh;
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .services-main-heading {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .services-card {
+        text-align: center;
+        border: 1px solid white;
+        height: 100px;
+        width: 320px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .services-card-title {
+        font-size: 28px;
+
+    }
+
+    .services-card-container {
+        height: 60vh;
+        margin-top: 20px;
+    }
+
+    .contact-section-container {
+        margin-top: 50px;
+        height: 30vh;
+    }
+
+    .contact-main-heading {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .my-details-icon {
+        font-size: 35px;
+        margin-left: 25px;
+        margin-top: 35px;
+
+    }
+
+    .icons-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .ruler {
+        background-color: azure;
+        border-width: 1px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    .nav-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2px;
+        padding-top: 15px;
+
+    }
+
+    .nav-logo {
+        height: 50px;
+        width: 50px;
+        border: 1px solid white;
+        padding-bottom: 3px;
+        margin-left: 45px;
+    }
+
+    .logo {
+        font-size: 18px;
+        padding-left: 14px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-items {
+        display: none;
+    }
+
+    .nav-items {
+        padding-right: 10px;
+    }
+
+    .nav-icon-container {
+        display: none;
+    }
+
+    .nav-bar-left {
+        padding: 12px;
+        font-size: 18px;
+        margin-right: 15px;
+        text-decoration: none;
+    }
+
+    .home-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: 100vh;
+        align-items: center;
+    }
+
+    .my-logo {
+        height: 250px;
+        border-radius: 250px;
+
+    }
+
+    .my-description {
+        width: 50vw;
+    }
+
+    .description-tag {
+        font-size: 22px;
+        font-family: "Comfortaa";
+        font-weight: 200;
+    }
+
+    .description-name {
+        font-size: 35px;
+        font-family: "Comfortaa";
+    }
+
+    .description-btn-1 {
+        background-color: white;
+        font-size: 15px;
+        padding: 10px;
+        color: black;
+        border-radius: 20px;
+        margin-right: 12px;
+    }
+
+    .description-btn-2 {
+        background-color: transparent;
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 20px;
+        border: solid 1px white
+    }
+
+    .skill-section-container {
+        height: 80vh;
+    }
+
+    .skills-section {
+        padding-left: 20px;
+    }
+
+    .skills-main-heading {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .skill-img {
+        height: 150px;
+        margin-top: 30px;
+    }
+
+    .skills-card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .projects-section-container {
+        height: 100vh;
+    }
+
+    .project-card {
+        border: solid 1px white;
+        border-radius: 5px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+        margin-left: 18px;
+    }
+
+    .project-card-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .project-img {
+        padding-top: 25px;
+        height: 100px;
+        border-radius: 5px;
+    }
+
+    .project-main-heading {
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .project-card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .services-main-heading {
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .services-card {
+        text-align: center;
+        border: 1px solid white;
+        height: 100px;
+        width: 320px;
+        border-radius: 8px;
+
+    }
+
+    .services-card-title {
+        font-size: 28px;
+
+    }
+
+    .services-card-container {
+        display: flex;
+        justify-content: space-around;
+        height: 50vh;
+        margin-top: 20px;
+    }
+
+    .contact-section-container {
+        margin-top: 50px;
+        height: 40vh;
+    }
+
+    .contact-main-heading {
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .my-details-icon {
+        font-size: 50px;
+        margin-left: 45px;
+        margin-top: 35px;
+    }
+
+    .icons-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .ruler {
+        background-color: azure;
+        border-width: 1px;
+    }
+}
+</style>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-bar-container">
+            <div class="nav-logo">
+                <p class="logo">SK</p>
+            </div>
+            <div class="nav-icon-container">
+                <i id="nav-items-icon" class="fas fa-bars hamberger-icon"></i>
+            </div>
+        </div>
+        <div class="navbar-items" id="navbarItems">
+            <a class="nav-item">Home</a>
+            <a class="nav-item" href="#skilsSection">Skills</a>
+            <a class="nav-item" href="#projectSection">Projects</a>
+            <a class="nav-item" href="#servicesSection">Services</a>
+            <a class="nav-item" href="#contactSection">Contact</a>
+        </div>
+
+        <div class="nav-items">
+            <a class="nav-bar-left" href="#homesection">Home</a>
+            <a class="nav-bar-left" href="#skilsSection">Skills</a>
+            <a class="nav-bar-left" href="#projectSection">Projects</a>
+            <a class="nav-bar-left" href="#servicesSection">Services</a>
+            <a class="nav-bar-left" href="#contactSection">Contact</a>
+        </div>
+    </nav>
+
+
+    <!--home page bottom section-->
+    <div id="homesection">
+        <div class="home-section">
+            <div class="my-description">
+                <p class="description-tag">Hi Myself</p>
+                <h1 class="description-name">Kandakurthi Srujan</h1>
+                <p class="description-tag">A MERN Stack Developer....</p>
+                <button class="description-btn-1">
+                    <a href="https://github.com/Srujangupta06?tab=repositories" target="_blank" class="github-url">Know More</a>
+                </button>
+                <button class="description-btn-2" id="btn-contact">Contact</button>
+            </div>
+            <div class="my-logo-container">
+                <img src="https://res.cloudinary.com/djv3sgbxn/image/upload/v1667743305/WhatsApp_Image_2022-11-06_at_19.30.15_xwa3eq.jpg" class="my-logo" alt="my-logo" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills section-->
+    <div id="skilsSection">
+        <div class="skill-section-container">
+            <h1 class="skills-main-heading">Familiar with </h1>
+            <div class="skills-card-container">
+                <div class="skill-card">
+                    <img src="https://res.cloudinary.com/djv3sgbxn/image/upload/v1701266718/html5-logo-31813_vixifn.png" class="skill-img" />
+                </div>
+                <div class="skill-card">
+                    <img src="https://res.cloudinary.com/djv3sgbxn/image/upload/v1701266719/css_ir1wks.png" class="skill-img" />
+                </div>
+                <div class="skill-card">
+                    <img src="https://res.cloudinary.com/djv3sgbxn/image/upload/v1701266719/js_uxedmf.png" class="skill-img" />
+                </div>
+                <div class="skill-card">
+                    <img src="https://res.cloudinary.com/djv3sgbxn/image/upload/v1701266719/python_jwuafz.png" class="skill-img" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Projects section-->
+    <div id="projectSection">
+        <div class="projects-section-container">
+            <h1 class="project-main-heading">Explore my Experience..</h1>
+            <div class="project-card-container">
+                <div class="project-card">
+                    <img src="https://res.cloudinary.com/djv3sgbxn/image/upload/v1706190726/tourism_xdbyeh.png" class="project-img" />
+                    <h1 class="project-card-title">Tourism Website</h1>
+                    <p>To Know more follow the Link👇</p>
+                    <a href="https://tourismsrujan.ccbp.tech/" target="_blank">Tourism </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://res.cloudinary.com/djv3sgbxn/image/upload/v1706190726/foodmunch_rq5tlr.png" class="project-img" />
+                    <h1 class="project-card-title">Food Munch</h1>
+                    <p>To Know more follow the Link👇</p>
+                    <a href="https://foodmunchsrujan.ccbp.tech/" target="_blank">Food Munch 😋🤤 </a>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://res.cloudinary.com/djv3sgbxn/image/upload/v1706190726/todos_zohkq0.png" class="project-img" />
+                    <h1 class="project-card-title">To-do Appliation</h1>
+                    <p>To Know more follow the Link👇</p>
+                    <a href="https://srujantodos.ccbp.tech/" target="_blank">Todo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Services section-->
+    <div id="servicesSection">
+        <div class="services-section-container">
+            <h1 class="services-main-heading">Services</h1>
+            <div class="services-card-container">
+                <div class="services-card">
+                    <p class="services-card-title">Static Website</p>
+                </div>
+
+                <div class="services-card">
+                    <p class="services-card-title">Responsive Website</p>
+                </div>
+
+                <div class="services-card">
+                    <p class="services-card-title">Dynamic Website</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="ruler">
+
+    <div id="contactSection">
+        <div class="contact-section-container">
+            <h1 class="contact-main-heading">Contact Me </h1>
+            <div class="icons-container">
+                <a><i class="fa-brands fa-linkedin my-details-icon"></i></a>
+                <a><i class="fa-regular fa-envelope my-details-icon"></i></a>
+                <a><i class="fa-brands fa-twitter my-details-icon"></i></a>
+                <a><i class="fa-brands fa-telegram my-details-icon"></i></a>
+                <a><i class="fa-brands fa-facebook my-details-icon"></i></a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/js/ccbp-ui-kit.js"></script>
+</body>
+
+</html>
